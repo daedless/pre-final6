@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Backup Code</title>
+  <link rel="icon" href="assets/images/backlain logo png.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+  <div class="bc-wrapper">
+    <!-- Logo -->
+    <div class="bc-logo">
+      <img src="assets/images/backlain logo png.png" alt="Backlain Logo">
+    </div>
+
+    <!-- Title & Description -->
+    <div class="bc-title">Enter Backup Code</div>
+    <div class="bc-desc">
+      Enter the backup code you saved to recover your password.
+    </div>
+
+    <!-- OTP Inputs -->
+    <div class="bc-code">
+      <input type="text" maxlength="1" required id="bc-otp1" name="bc-otp1">
+      <input type="text" maxlength="1" required id="bc-otp2" name="bc-otp2">
+      <input type="text" maxlength="1" required id="bc-otp3" name="bc-otp3">
+      <input type="text" maxlength="1" required id="bc-otp4" name="bc-otp4">
+      <input type="text" maxlength="1" required id="bc-otp5" name="bc-otp5">
+      <input type="text" maxlength="1" required id="bc-otp6" name="bc-otp6">
+    </div>
+
+    <!-- Verify Button -->
+    <button class="bc-button">Verify Code</button>
+  </div>
+
+<script>
+  const bcInputs = document.querySelectorAll('.bc-code input');
+
+bcInputs.forEach((input, index) => {
+  input.addEventListener('input', () => {
+    if (input.value.length === 1 && index < bcInputs.length - 1) {
+      bcInputs[index + 1].focus();
+    }
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace' && input.value === '' && index > 0) {
+      bcInputs[index - 1].focus();
+    }
+  });
+});
+
+// Activate wrapper on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.bc-wrapper');
+  setTimeout(() => {
+    wrapper.classList.add('active');
+  }, 300);
+});
+
+</script>
+
+  <script src="assets/js/backup-code.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Backup Verification Code</title>
+  <link rel="icon" href="assets/images/backlain logo png.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+  <div class="bv-wrapper">
+    <!-- Logo -->
+    <div class="bv-logo">
+      <img src="assets/images/backlain logo png.png" alt="Backlain Logo">
+    </div>
+
+    <!-- Title & Description -->
+    <div class="bv-title">Enter Backup Verification Code</div>
+    <div class="bv-desc">
+         We have sent a 6-digit code to your email. Enter it below to continue.
+    </div>
+
+    <!-- OTP Inputs -->
+    <div class="bv-code">
+      <input type="text" maxlength="1" required id="bv-1" name="bv-1">
+      <input type="text" maxlength="1" required id="bv-2" name="bv-2">
+      <input type="text" maxlength="1" required id="bv-3" name="bv-3">
+      <input type="text" maxlength="1" required id="bv-4" name="bv-4">
+      <input type="text" maxlength="1" required id="bv-5" name="bv-5">
+      <input type="text" maxlength="1" required id="bv-6" name="bv-6">
+    </div>
+
+    <!-- Verify Button -->
+    <button class="bv-button">Verify Code</button>
+  </div>
+
+<SCript>const bvInputs = document.querySelectorAll('.bv-code input');
+
+bvInputs.forEach((input, index) => {
+  input.addEventListener('input', () => {
+    // Only allow digits
+    input.value = input.value.replace(/[^0-9]/g, '');
+    
+    // Auto-focus next input
+    if (input.value.length === 1 && index < bvInputs.length - 1) {
+      bvInputs[index + 1].focus();
+    }
+  });
+
+  input.addEventListener('keydown', (e) => {
+    // Go back on backspace
+    if (e.key === 'Backspace' && input.value === '' && index > 0) {
+      bvInputs[index - 1].focus();
+    }
+  });
+});
+
+// Activate wrapper on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.bv-wrapper');
+  setTimeout(() => {
+    wrapper.classList.add('active');
+  }, 300);
+});
+</SCript>
+
+  <script src="assets/js/bv-script.js"></script>
+</body>
+</html>

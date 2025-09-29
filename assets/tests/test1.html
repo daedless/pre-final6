@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backlain - Our Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+      color: #1a2a33; /* dark blue-gray */
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+      
+    }
+
+    /* Left image placeholder */
+    .image-box {
+      width: 48%;
+      height: 400px;
+      border: 2px solid #1a2a33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9f9f9;
+    }
+
+    .image-box span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Right text content */
+    .text-box {
+      width: 48%;
+      margin-top: -20px; 
+    }
+
+    .text-box h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #183544;
+      
+      
+    }
+
+    .text-box p.subtitle {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 40px;
+    }
+
+    .text-box h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #183544;
+      
+    }
+
+    .text-box p.story {
+      font-size: 18px;
+      line-height: 1.1;
+      color: #183544;
+      margin-bottom: 45px;
+      text-align: justify;
+      margin-top: 10px; /* move story up */
+    }
+
+    .text-box p.tagline {
+      font-size: 22px;
+      font-weight: 400;
+      font-style: italic;
+      margin-top: 15px;
+    }
+
+    /* Circular logo bottom right */
+    .circle-logo {
+      position: absolute;
+      right: 110px;
+      bottom: 170px;
+      width: 100px;
+      height: 150px;
+    }
+
+    .circle-logo svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .circle-logo img {
+      position: absolute;
+      width: 50px; /* adjust as needed */
+      height: 60px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-box,
+      .text-box {
+        width: 100%;
+      }
+
+      .circle-logo {
+        position: static;
+        margin: 40px auto 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left side image -->
+    <div class="image-box">
+      <span>Image Placeholder</span>
+    </div>
+
+    <!-- Right side text -->
+    <div class="text-box">
+      <h2>HIS & HER</h2>
+      <p class="subtitle">ICONIC DESIGNS FOR BOTH. MADE TO BE WORN YOUR WAY.</p>
+
+      <h3>OUR STORY</h3>
+      <p class="story">
+        EVERY BRAND BEGINS WITH A SPARK—AN IDEA BORN FROM PASSION, NECESSITY, OR A VISION FOR CHANGE. 
+        BACKLAIN WAS BORN FROM THE BELIEF THAT STYLE SHOULD TELL A STORY AND EVOLVE WITH EVERY JOURNEY. 
+        ONE TIMELESS JACKET, ENDLESS INTERCHANGEABLE PANELS—MADE TO FLIP, STYLE, AND REPEAT. 
+        WE CREATE FOR THOSE WHO SEE FASHION AS A CANVAS OF INDIVIDUALITY, RESILIENCE, AND CREATIVITY.
+      </p>
+
+      <p class="tagline"><strong>FLIP IT. STYLE IT. REPEAT IT.</strong></p>
+    </div>
+  </div>
+
+<!-- Circular text logo -->
+<div class="circle-logo">
+  <svg viewBox="0 0 220 220"> <!-- slightly smaller viewBox -->
+    <!-- Circle path (smaller radius) -->
+    <defs>
+      <path id="circlePath" d="M 110, 110 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"/>
+    </defs>
+    <text fill="#1a2a33" font-size="22" font-weight="400" letter-spacing="1.2">
+      <textPath href="#circlePath" startOffset="0%">
+        Flip · Style · Repeat · Flip · Style · Repeat ·
+      </textPath>
+    </text>
+  </svg>
+
+  <!-- Center logo image -->
+  <img src="your-logo.png" alt="Backlain Logo">
+</div>
+
+</body>
+</html>

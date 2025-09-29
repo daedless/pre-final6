@@ -1,0 +1,575 @@
+
+ /* Full-screen preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f5f8fa; /* same as your forms */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    /* Logo bouncing animation */
+    #preloader img {
+      width: 100px;
+      animation: bounce 1.2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Loader dots below logo */
+    .loader-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .loader-dots div {
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      background: #183544; /* primary logo color */
+      border-radius: 50%;
+      animation: bounceDots 0.6s infinite alternate;
+    }
+
+    .loader-dots div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .loader-dots div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounceDots {
+      0% { transform: translateY(0); opacity: 0.3; }
+      50% { transform: translateY(-10px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.3; }
+    }
+
+
+/* ====================== End Preloader ========================*/
+
+/* General Body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Form wrapper */
+.lr-wrapper {
+  background: #ecf0f3;
+  padding: 50px 60px;
+  border-radius: 6px;
+  width: 450px;
+  max-width: 90%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+
+  /* Fade + slide animation */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Fade out wrapper */
+.lr-wrapper.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none; /* prevent clicks while fading */
+}
+
+/* Logo */
+.lr-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.lr-logo img {
+  max-width: 180px;
+}
+
+/* Form styles */
+.lr-form {
+  text-align: center;
+}
+
+.lr-title {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #183544;
+  font-weight: 600;
+}
+
+.lr-desc {
+  margin: 0 0 25px;
+  font-size: 14px;
+  color: #555;
+}
+
+.lr-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+/* Button */
+.lr-button {
+  width: 100%;
+  padding: 14px;
+  background: #183544;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.lr-button:hover {
+  background: #183544;
+}
+
+/* Bottom links */
+.lr-bottom-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.lr-bottom-links a {
+  color: #183544;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.lr-bottom-center {
+  justify-content: center;
+}
+
+/* Hidden class */
+.lr-hidden {
+  display: none;
+}
+
+@media (max-width: 4270px) {
+  
+  .lr-bottom-links {
+  font-size: 12px;
+}
+
+.lr-bottom-links a {
+  font-size: 12px;
+}
+}
+
+
+@media (max-width: 390px) {
+  
+  .lr-bottom-links {
+  font-size: 10px;
+}
+
+.lr-bottom-links a {
+  font-size: 10px;
+}
+}
+
+
+
+/*  ==================== End Login/Register  ======================*/
+
+
+/*  ==================== Credentials Form  ======================*/
+
+/* Wrapper for Set Password */
+.sp-wrapper {
+  background: #ecf0f3;
+  padding: 50px 60px;
+  border-radius: 6px;
+  width: 450px;
+  max-width: 90%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Logo */
+.sp-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sp-logo img {
+  max-width: 180px;
+}
+
+/* Form styles */
+.sp-form {
+  text-align: center;
+}
+
+.sp-title {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #183544;
+  font-weight: 600;
+}
+
+.sp-desc {
+  margin: 0 0 25px;
+  font-size: 14px;
+  color: #555;
+}
+
+.sp-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+/* Button */
+.sp-button {
+  width: 100%;
+  padding: 14px;
+  background: #183544;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sp-button:hover {
+  background: #16354e;
+}
+
+/* Bottom link */
+.sp-bottom-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.sp-bottom-links a {
+  color: #183544;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+/*  ==================== End Credentials Form  ======================*/
+
+
+/*  ==================== Security Question Form  ======================*/
+
+/* Security Question Form - Unique Classes */
+.sq-wrapper {
+  background: #ecf0f3;
+  padding: 50px 60px;
+  border-radius: 6px;
+  width: 450px;
+  max-width: 90%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: auto;
+}
+
+.sq-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sq-logo img {
+  max-width: 180px;
+}
+
+.sq-form {
+  text-align: center;
+}
+
+.sq-title {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #183544;
+  font-weight: 600;
+}
+
+.sq-desc {
+  margin: 0 0 25px;
+  font-size: 14px;
+  color: #555;
+}
+
+.sq-input, .sq-select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  text-align: center; /* center text inside input/select */
+}
+
+.sq-backup {
+  letter-spacing: 10px; /* 6-digit spacing */
+  font-size: 18px;
+}
+
+.sq-button {
+  width: 100%;
+  padding: 14px;
+  background: #183544;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sq-button:hover {
+  background: #16354e;
+}
+
+.sq-bottom-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.sq-bottom-links a {
+  color: #183544;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+/*  ==================== End Security Question Form  ======================*/
+
+
+/*  ==================== Common Styles ======================*/
+
+/* Backlain Sign In Form */
+.si-wrapper {
+  background: #b7cedb;
+  padding: 50px 60px;
+  border-radius: 6px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin: auto;
+}
+
+.si-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.si-logo img {
+  max-width: 180px;
+}
+
+.si-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #183544;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.si-desc {
+  font-size: 14px;
+  color: #5a6b7c;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.si-input {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #c3cbd3;
+  border-radius: 4px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.si-button {
+  width: 100%;
+  padding: 14px;
+  background: #183544;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.si-button:hover {
+  background: #183544;
+}
+
+/* 6-digit verification code form */
+.vc-wrapper {
+  background: #f5f8fa;
+  padding: 50px 60px;
+  border-radius: 6px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin: auto;
+
+  /* Initial state: hidden & moved up */
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.vc-wrapper.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vc-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #183544;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.vc-desc {
+  font-size: 14px;
+  color: #5a6b7c;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* OTP input boxes */
+.vc-code {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.vc-code input {
+  width: 45px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #c3cbd3;
+  border-radius: 6px;
+}
+
+/*  ==================== End Common Styles ======================*/
+
+/*  ==================== Forget Form Styles ======================*/
+
+.forgot-password .recovery-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.forgot-password .recovery-card {
+  width: 100%;
+  max-width: 350px;
+  background: #f5f8fa;
+  border: 2px solid #c3cbd3;
+  border-radius: 8px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.forgot-password .recovery-card:hover {
+  border-color: #183544;
+  background: #e9edf1;
+}
+
+.forgot-password .recovery-card.active {
+  border-color: #183544;
+  background: #dce1e7;
+}
+
+.forgot-password .card-title {
+  font-weight: 600;
+  color: #183544;
+  margin-bottom: 5px;
+}
+
+.forgot-password .card-desc {
+  font-size: 14px;
+  color: #5a6b7c;
+}
+
+
+
+
+/*  ==================== End Forget Form Styles ======================*/
+
+
+
+/*  ==================== Security Question Form Styles ======================*/
+
+.security-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.security-form label {
+  font-size: 14px;
+  color: #183544;
+  margin-bottom: 5px;
+}
+
+.security-form select,
+.security-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c3cbd3;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/*  ==================== End Security Question Form Styles ======================*/
+
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Question</title>
+  <link rel="icon" href="assets/images/backlain logo png.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+  <div class="sqv-wrapper">
+    <!-- Logo -->
+    <div class="sqv-logo">
+      <img src="assets/images/backlain logo png.png" alt="Backlain Logo">
+    </div>
+
+    <!-- Title & Description -->
+    <div class="sqv-title">Answer Security Question</div>
+    <div class="sqv-desc">
+      Select your security question and provide the correct answer to recover your password.
+    </div>
+
+    <!-- Security Question Form -->
+    <div class="sqv-form">
+      <select id="sqv-question" class="sqv-input">
+        <option value="" disabled selected>Select a question</option>
+        <option value="pet">What is the name of your first pet?</option>
+        <option value="school">What was your first school?</option>
+        <option value="city">In what city were you born?</option>
+        <option value="mother">What is your mother’s maiden name?</option>
+        <option value="car">What was your first car?</option>
+        <option value="friend">Who was your best childhood friend?</option>
+      </select>
+      <input type="text" class="sqv-input" placeholder="Your answer" required>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="sqv-button">Submit</button>
+  </div>
+</body>
+</html>

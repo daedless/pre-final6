@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backlain Menu Clone with Filters</title>
+  <link rel="stylesheet" href="assets/css/dash.css">
+  <link rel="stylesheet" href="assets/css/collection.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <style>
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 70px;
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 20px 70px;
+      text-align: left;
+      position: relative;
+      top: 30px;
+    }
+
+    .close-btn {
+      font-size: 32px;
+      position: absolute;
+      top: 25px;
+      right: 70px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: #b7cedb;
+      margin: 0 70px;
+      position: relative;
+      top: 35px;
+    }
+
+   
+
+/* Show mobile buttons only on small screens */
+@media (max-width: 425px) {
+  
+.header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .sort-filter-wrapper {
+    display: none;
+  }
+
+  .menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 20px 30px;
+      text-align: left;
+      position: relative;
+      top: 30px;
+    }
+
+    .close-btn {
+      font-size: 32px;
+      position: absolute;
+      top: 28px;
+      right: 24px;
+      cursor: pointer;
+      display: none;
+    }
+  
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div id="hamburger" class="hamburger"><span></span><span></span><span></span></div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/images/backlain logo png.png" alt="Backlain Logo">
+      </a>
+    </div>   
+    <div class="icons">
+      <img src="assets/images/header-01.png" alt="User" class="icon-img">
+      <img src="assets/images/header-02.png" alt="Search" class="icon-img icon-search">
+          <a href="cart.html">
+            <img src="assets/images/cart icon-01.png" alt="Cart" class="cart-icon">
+          </a>    
+        <span class="cart-text">CART</span>
+      </a>
+    </div>
+  </div>
+
+
+
+  <div class="divider"></div>
+
+  <div class="divider-mobile"></div>
+
+  <!-- Menu -->
+  <div class="menu" id="menu">
+    <div class="close-btn" id="closeBtn"><i class="fas fa-times"></i></div>
+    <a href="Jacket-collection.html">JACKET COLLECTION</a>
+    <a href="Backart-Collection.html">BACKART COLLECTION</a>
+    <a href="Sales.html">SALE</a>
+    <a href="Our-Story.html">ABOUT</a>
+    <a href="login.html">LOG IN</a>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar-wrapper hidden" id="searchWrapper">
+  <input type="text" placeholder="Search" class="search-bar">
+  <i class="fas fa-times close-icon"></i>
+</div>
+
+  <!-- Shop Layout -->
+  <div class="shop-layout">
+
+    <!-- Sidebar Filters -->
+    <aside class="filters">
+       <!-- MOBILE CLOSE BUTTON -->
+      <button class="filters-close" id="filtersCloseBtn">&times;</button>
+      <div class="filter">
+        <div class="filter-header">AVAILABILITY <span class="material-icons-outlined">expand_more</span></div>
+        <div class="filter-content">
+          <label><input type="checkbox" value="in-stock"> In Stock</label>
+          <label><input type="checkbox" value="out-stock"> Out Of Stock</label>
+        </div>
+      </div>
+      <div class="filter">
+        <div class="filter-header">SIZE <span class="material-icons-outlined">expand_more</span></div>
+        <div class="filter-content">
+          <label><input type="checkbox"> Small</label>
+          <label><input type="checkbox"> Medium</label>
+          <label><input type="checkbox"> Large</label>
+          <label><input type="checkbox"> X-Large</label>
+        </div>
+      </div>
+      <div class="filter">
+        <div class="filter-header">COLOR <span class="material-icons-outlined">expand_more</span></div>
+        <div class="filter-content">
+          <label><input type="checkbox"> Black</label>
+          <label><input type="checkbox"> Blue</label>
+          <label><input type="checkbox"> White</label>
+        </div>
+      </div>
+      <div class="filter">
+        <div class="filter-header">PRICE <span class="material-icons-outlined">expand_more</span></div>
+        <div class="filter-content">
+          <input type="range" min="0" max="100" value="50" id="priceSlider">
+          <div id="priceValue" style="font-size:13px; text-align:right; color:#133c55; margin-bottom:8px;">$50</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Jacket Collection -->
+    <section class="collection">
+
+      <div class="collection-header">
+
+        <!-- MOBILE BUTTONS -->
+          <div class="mobile-buttons">
+            <button class="sort-btn mobile-filter-btn" id="mobileFilterBtn">
+              FILTER <span class="material-icons-outlined">expand_more</span>
+            </button>
+
+            <!-- FILTER button -->
+            <!-- Dropdown Filters -->
+            <aside class="filters" id="filtersDropdown">
+              <div class="filter">
+                <div class="filter-header">AVAILABILITY</div>
+                <div class="filter-content">
+                  <label><input type="checkbox" value="in-stock"> In Stock</label>
+                  <label><input type="checkbox" value="out-stock"> Out Of Stock</label>
+                </div>
+              </div>
+
+              <div class="filter">
+                <div class="filter-header">PRICE</div>
+                <div class="filter-content">
+                  <input type="range" min="0" max="100" value="50" id="priceSlider">
+                  <div id="priceValue" style="font-size:13px; text-align:right; color:#133c55;">$50</div>
+                </div>
+              </div>
+            </aside>
+
+            <button class="sort-btn mobile-sort-btn" id="mobileSortBtn">
+              SORT <span class="material-icons-outlined">expand_more</span>
+            </button>
+            <div class="sort-dropdown" id="sortDropdown">
+            <div data-sort="best-selling">BEST SELLING</div>
+            <div data-sort="name-asc">Alphabetically, A-Z</div>
+            <div data-sort="name-desc">Alphabetically, Z-A</div>
+            <div data-sort="price-asc">Price, low to high</div>
+            <div data-sort="price-desc">Price, high to low</div>
+            <div data-sort="date-asc">Date, old to new</div>
+            <div data-sort="date-desc">Date, new to old</div>
+          </div>
+          </div>
+
+        <span class="product-count">5 PRODUCTS</span>
+
+        <div class="sort-filter-wrapper">
+          <button class="sort-btn" id="sortBtn">SORT & FILTER <span class="material-icons-outlined">expand_more</span></button>
+          <div class="sort-dropdown" id="sortDropdown">
+            <div data-sort="best-selling">BEST SELLING</div>
+            <div data-sort="name-asc">Alphabetically, A-Z</div>
+            <div data-sort="name-desc">Alphabetically, Z-A</div>
+            <div data-sort="price-asc">Price, low to high</div>
+            <div data-sort="price-desc">Price, high to low</div>
+            <div data-sort="date-asc">Date, old to new</div>
+            <div data-sort="date-desc">Date, new to old</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="items">
+        <div class="item" data-name="GRAFFITI GLOW LIGHT BLUE JACKET" data-price="33" data-stock="in-stock">
+          <div class="img-box"><span class="material-icons-outlined heart">favorite_border</span></div>
+          <h3>ABSTRACT VIBES BACKART</h3>
+          <button class="price">$33.00</button>
+        </div>
+        <div class="item" data-name="COOL DUCK NAVY BLUE JACKET" data-price="33" data-stock="in-stock">
+          <div class="img-box"><span class="material-icons-outlined heart">favorite_border</span></div>
+          <h3>URBAN LINES BACKART</h3>
+          <button class="price">$33.00</button>
+        </div>
+        <div class="item" data-name="RIDE THE SKY LIGHT BLUE JACKET" data-price="33" data-stock="out-stock">
+          <div class="img-box"><span class="material-icons-outlined heart">favorite_border</span></div>
+          <h3>GALAXY SPLASH BACKART</h3>
+          <button class="price">$33.00</button>
+        </div>
+        <div class="item" data-name="LATTE PAWS LIGHT BLUE JACKET" data-price="33" data-stock="in-stock">
+          <div class="img-box"><span class="material-icons-outlined heart">favorite_border</span></div>
+          <h3>LRETRO WAVE BACKART</h3>
+          <button class="price">$33.00</button>
+        </div>
+        <div class="item" data-name="LATTE PAWS LIGHT BLUE JACKET" data-price="33" data-stock="in-stock">
+          <div class="img-box"><span class="material-icons-outlined heart">favorite_border</span></div>
+          <h3>GALAXY SPLASH BACKART</h3>
+          <button class="price">$33.00</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-icon">
+        <img src="assets/images/icons-01.png" alt="Exchange">
+        <p>Exchange & Return Policy</p>
+      </div>
+      <div class="footer-icon">
+        <img src="assets/images/icons-02.png" alt="Payment">
+        <p>Safe & Secure Payment</p>
+      </div>
+      <div class="footer-icon">
+        <img src="assets/images/icons-03.png" alt="Delivery" style="width: 60px; height: 40px;">
+        <p>Fast Delivery Service</p>
+      </div>
+    </div>
+    <div class="footer-content">
+      <div class="newsletter">
+        <input type="email" placeholder="YOUR EMAIL ADDRESS">
+        <button>Sign Up</button>
+      </div>
+      <div class="footer-links">
+        <a href="FAQ.html">FAQ</a>
+        <a href="policy.html">Return and Exchange</a>
+        <a href="size-chart.html">Size Chart</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="socials">
+        <a href="#"><img src="assets/images/social media icons-01.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/images/social media icons-02.png" alt="TikTok"></a>
+        <a href="#"><img src="assets/images/social media icons-03.png" alt="Facebook"></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 BACKLAIN <br> ALL RIGHTS RESERVED
+    </div>
+  </footer>
+
+  
+
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/collection.js"></script>
+</body>
+</html>

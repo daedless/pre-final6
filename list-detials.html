@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Page</title>
+<link rel="icon" href="assets/images/backlain logo png.png" type="image/png">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    background: #fff;
+    color: #2c3e50;
+  }
+
+  .container {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* Left column (placeholder cards) */
+  .gallery {
+    display: flex;
+    gap: 30px;
+  }
+
+  .thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .thumb {
+    width: 60px;
+    height: 100px;
+    border: 1px solid #2c3e50;
+    background: #f9f9f9;
+  }
+
+  .main-box {
+    width: 450px;
+    height: 568px;
+    border: 1px solid #2c3e50;
+    background: #f9f9f9;
+  }
+
+  /* Right column (product info) */
+  .details {
+    flex: 1;
+  }
+
+  .details h1 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    margin-top: -3px;
+    text-transform: uppercase;
+  }
+
+  .price {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid #2c3e50;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    
+  }
+
+  /* Horizontal bar under price */
+  .price-bar {
+    width: 100%;
+    height: 1px;
+    background: #2c3e50;
+    margin-bottom: 20px;
+    
+  }
+
+  /* Sizes */
+  .sizes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .sizes button {
+    border: 1px solid #2c3e50;
+    background: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    width: 40px;          /* fixed width for all */
+    height: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 10px;
+  }
+
+  .sizes button:hover {
+    background: #2c3e50;
+    color: #fff;
+  }
+
+  /* Horizontal bar under sizes */
+  .sizes-bar {
+    width: 100%;
+    height: 1px;
+    background: #2c3e50;
+    margin-bottom: 20px;
+  }
+
+  /* Buttons */
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid #2c3e50;
+    background: none;
+    transition: 0.3s;
+  }
+
+  .details .btn {
+  margin-left: -2px; /* moves buttons slightly left */
+}
+
+
+  .btn:hover {
+    background: #2c3e50;
+    color: #fff;
+  }
+
+  /* Text sections */
+  .intro {
+    font-style: italic;
+    font-size: 13px;
+    margin: 20px 0;
+  }
+
+  .section-title {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .desc {
+    font-size: 14px;
+    margin: 5px 0 15px;
+    line-height: 1.3;
+  }
+
+  /* Care instructions dropdown */
+  details {
+    margin-top: 37px;
+    font-size: 14px;
+    position: relative;
+    margin-left: -2px;
+  }
+
+  summary {
+    padding: 10px 40px 10px 15px; /* extra space for arrow */
+    border: 1px solid #2c3e50;
+    border-radius: 20px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    list-style: none; /* remove default marker */
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* Chevron arrow (instead of symbol) */
+  summary::after {
+    content: "";
+    position: absolute;
+    right: 55px;
+    top: 40%;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid #2c3e50;
+    border-bottom: 2px solid #2c3e50;
+    transform: translateY(-50%) rotate(45deg); /* default closed (›) */
+    transition: transform 0.3s;
+  }
+
+  /* Rotate chevron when open */
+  details[open] summary::after {
+    transform: translateY(-50%) rotate(225deg); /* down (˅) */
+  }
+
+  details p {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Left column (cards instead of images) -->
+  <div class="gallery">
+    <div class="thumbnails">
+      <div class="thumb"></div>
+      <div class="thumb"></div>
+      <div class="thumb"></div>
+      <div class="thumb"></div>
+      <div class="thumb"></div>
+    </div>
+    <div class="main-box"></div>
+  </div>
+
+  <!-- Right column -->
+  <div class="details">
+    <h1>Graffiti Glow Light Blue Jacket</h1>
+    <span class="price">$33.00</span>
+    <div class="price-bar"></div>
+
+    <div class="sizes">
+      <button>S</button>
+      <button>M</button>
+      <button>L</button>
+      <button>XL</button>
+    </div>
+    <div class="sizes-bar"></div>
+
+    <button class="btn">Add to Cart</button>
+    <button class="btn">Buy it Now</button>
+
+    <p class="intro">
+      Introducing Jacket Collection – Crafted from premium denim and finished 
+      with distinctive detail, each piece delivers the perfect fusion of style, 
+      comfort, and innovation.
+    </p>
+
+    <p class="section-title">Description:</p>
+    <p class="desc">Model is 170 cms wearing size S</p>
+
+    <p class="section-title">Disclaimer:</p>
+    <p class="desc">
+      For the Light Blue shade, please wash the jacket once before first use. 
+      These pieces are made with a special tint that gives each one a unique look. 
+      Before washing, kindly remove the backart piece to preserve its quality 
+      and finish. Reattach once the jacket is completely dry.
+    </p>
+
+    <details>
+      <summary>CARE INSTRUCTIONS</summary>
+      <p>
+        Wash separately in cold water. Do not bleach. Line dry only. 
+        Iron on low heat if necessary.
+      </p>
+    </details>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+/* ==== Sidebar Filter Unique Styling ==== */
+    .collection { margin-top: 30px; }
+    .shop-layout { display: grid; grid-template-columns: 250px 1fr; margin-top: 40px; padding-left: 70px; }
+    .filters { padding-right: 50px; margin-top: 27px; }
+    .filter { margin-bottom: 8px; border-bottom: 1px solid #b7cedb; }
+    .filter-header {
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      text-transform: uppercase;
+      color: #183544;
+    }
+    .filter-header span { transition: transform 0.3s ease; }
+    .filter.active .filter-header span { transform: rotate(180deg); }
+    .filter-content { display: none; margin-top: 10px; }
+    .filter.active .filter-content { display: block; }
+    .filter-content label {
+      display: flex; align-items: center;
+      font-size: 13px; margin-bottom: 8px;
+      cursor: pointer; color: #183544;
+    }
+    .filter-content input[type="checkbox"] {
+      appearance: none; -webkit-appearance: none;
+      width: 14px; height: 14px;
+      border: 1px solid #183544;
+      border-radius: 2px;
+      margin-right: 8px;
+      position: relative;
+      cursor: pointer;
+    }
+    .filter-content input[type="checkbox"]:checked { background-color: #183544; }
+
+    /* Slider styling */
+    #priceSlider {
+      -webkit-appearance: none; width: 100%; height: 5px;
+      background: linear-gradient(to right, #183544 50%, #ddd 50%);
+      border-radius: 3px; outline: none; cursor: pointer; margin-bottom: 8px;
+    }
+    #priceSlider::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 10px; height: 10px;
+      background: #183544; border-radius: 50%;
+      cursor: pointer; margin-top: -2.5px; transition: background 0.3s ease;
+    }
+    #priceSlider::-moz-range-track { height: 5px; background: #ddd; border-radius: 3px; }
+    #priceSlider::-moz-range-progress { background-color: #183544; height: 5px; border-radius: 3px; }
+    #priceSlider::-moz-range-thumb { width: 10px; height: 10px; background: #183544; border-radius: 50%; cursor: pointer; border: none; }
+
+    .collection-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 15px; position: relative; top: -35px;
+    }
+    .collection-header .product-count {
+      font-size: 14px; font-weight: 600; color: #183544; text-transform: uppercase;
+    }
+    .sort-btn {
+      font-size: 15px; font-weight: 500; padding: 6px 27px;
+      border: 1px solid #183544; border-radius: 20px;
+      background: transparent; color: #183544;
+      cursor: pointer; display: flex; align-items: center; gap: 5px;
+      margin-left: auto; margin-right: 49px; position: relative;
+    }
+
+    /* Sort & Filter dropdown animation */
+    .sort-filter-wrapper {
+      position: relative; /* reference for absolute dropdown */
+    }
+    .sort-dropdown {
+      position: absolute;
+      top: 100%;        /* directly under the button */
+      left: 40%;        /* start from the center of the button */
+      transform: translateX(-50%) scale(0.75); /* center horizontally + scale */
+      transform-origin: top center;
+      background: #fff;
+      border: 1px solid #133c55;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 140px;
+      z-index: 10;
+      opacity: 0;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .sort-dropdown.show {
+      transform: translateX(-50%) scale(1); /* center + full scale when showing */
+      opacity: 1;
+    }
+    .sort-dropdown div {
+      padding: 6px 3px;
+      cursor: pointer;
+      font-size: 13px;
+      color: #133c55;
+      border-radius: 5px;
+      transition: background 0.2s;
+      text-align: left;
+    }
+    .sort-dropdown div:hover { background-color: #133c55; color: #fff; }
+
+    .collection .items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 0.2fr));
+      gap: 20px;
+    }
+
+    /* Product details under the box */
+    .item h3 {
+      font-size: 13px;
+      font-weight: normal;
+      margin: 12px 0 6px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .filters-close{
+      display: none;
+    }
+
+
+    .mobile-buttons {
+      display: none;
+   }
+
+    /* Filters collapse style */
+    .filter .filter-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .filter.active .filter-content {
+      display: block;
+    }
+
+
+    /* ===== Mobile Layout for ≤410px ===== */
+@media (max-width: 425px) {
+  /* Reset grid → stack vertically */
+
+  .icons {
+  padding: 0 6%;         /* space between icons and cart */
+}
+
+.cart-text{
+  display: none;
+}
+
+
+.divider-mobile {
+    display: block;
+    height: 0.5px;
+    background: #b7cedb;
+    margin: 0 6%; /* wider margin for mobile */
+    top: 20px;
+  }
+
+  .divider { display: none; } /* hide desktop divider */
+
+
+  .collection{
+    margin-top: 0;
+  }
+
+
+  .shop-layout {
+    display: block;
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+
+  .sort-filter-wrapper {
+    display: none;
+  }
+
+  .sort-dropdown {
+      position: absolute;
+      top: 40%;        /* directly under the button */
+      left: 77.3%;        /* start from the center of the button */
+      min-width: 120px;
+
+    }
+
+    .sort-dropdown div {
+      padding: 6px 3px;
+      cursor: pointer;
+      font-size: 12px;
+      color: #133c55;
+      border-radius: 5px;
+    }
+
+  /* Hide sidebar filters by default */
+  /* Filters styled like the SORT dropdown */
+.filters {
+  display: none;
+  position: absolute;        /* not fixed */
+  top: 5%;                 /* show below the button */
+  right: 54.6%;                  /* align with button */
+  background: #fff;
+  border: 1px solid #133c55;
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  width: 130px;              /* same width as sort */
+  z-index: 9999;
+}
+
+
+.filters.show {
+  display: block;            /* toggle like dropdown */
+}
+
+.filters-close {
+  display: none;             /* close button not needed for dropdown */
+}
+
+
+  /* Collection header buttons */
+  .collection-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 20px;
+    top: 0;
+  }
+
+  .collection-header .product-count {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-left: 7px;
+  }
+
+  /* Filter + Sort buttons like screenshot */
+  .sort-filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* Product grid → 2 columns */
+  .collection .items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 7px;
+  }
+
+   .item h3 {
+      font-size: 13px;
+      font-weight: 500;
+      margin: 12px 0 6px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+
+
+
+  /* MOBILE BUTTONS */
+.mobile-buttons {
+  display: flex;
+  justify-content: center; /* center the button group */
+  gap: 30px; /* space between buttons */
+  margin-bottom: 12px;
+}
+
+.mobile-buttons button {
+  all: unset; /* reset default button styles */
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 13.5%;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #fff; /* match desktop button */
+  color: #133c55;
+  border: 1px solid #133c55;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.mobile-buttons button span {
+  font-size: 18px; /* arrow size like desktop */
+}
+
+  @media (max-width: 390px) {
+    .mobile-buttons button {
+  padding: 5px 12.7%;
+}
+
+.sort-dropdown {
+      position: absolute;
+      top: 40%;        /* directly under the button */
+      left: 77.4%;        /* start from the center of the button */
+      min-width: 120px;
+
+    }
+
+    .filters.show {
+    display: block;
+    right: 53%; /* slide in */
+  }
+
+  
+
+  }
+
+
+   @media (max-width: 377px) {
+    .mobile-buttons button {
+  padding: 5px 12.4%;
+  
+}
+.sort-dropdown {
+      left: 77%;        /* start from the center of the button */
+    }
+
+.filters.show {
+    display: block;
+    right: 13%; /* slide in */
+  }
+    
+}
+
+  /* For very narrow devices → 1 column */
+  @media (max-width: 320px) {
+    .collection .items {
+      grid-template-columns: 1fr;
+    }
+  }
+
+}

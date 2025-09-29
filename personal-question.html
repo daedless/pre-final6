@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Question</title>
+  <link rel="icon" href="assets/images/backlain logo png.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css"> <!-- your combined CSS file -->
+</head>
+<body>
+
+  <div class="sq-wrapper">
+    <div class="sq-logo">
+      <img src="assets/images/backlain logo png.png" alt="Logo">
+    </div>
+
+    <!-- Security Question Form -->
+    <form id="securityQuestionForm" class="sq-form">
+      <h2 class="sq-title">Security Question</h2>
+      <p class="sq-desc">Enter your 6-digit backup code and answer your personal question</p>
+
+      <!-- Security Question Dropdown -->
+      <select class="sq-select" required>
+        <option value="" disabled selected>Select a security question</option>
+        <option value="pet">What is your pet's name?</option>
+        <option value="school">What is your first school's name?</option>
+        <option value="mother">What is your mother's maiden name?</option>
+        <option value="city">In which city were you born?</option>
+      </select>
+
+      <!-- Answer Input -->
+      <input type="text" placeholder="Your Answer" class="sq-input" required>
+
+      <!-- 6-digit backup code input -->
+      <input type="text" class="sq-input sq-backup" placeholder="------" maxlength="6" pattern="\d{6}" title="Enter 6-digit code" required>
+
+      <button type="submit" class="sq-button">Submit Answer</button>
+
+      <!-- Bottom link -->
+      <div class="sq-bottom-links">
+        <span><a href="#">Back to Login</a></span>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
